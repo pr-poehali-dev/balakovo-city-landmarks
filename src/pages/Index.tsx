@@ -238,7 +238,7 @@ const Index = () => {
               </div>
               <div className="rounded-2xl overflow-hidden" style={{ height: 460, border: '1px solid rgba(255,255,255,0.1)' }}>
                 <iframe
-                  src="https://yandex.ru/map-widget/v1/?ll=47.7863%2C52.0437&spn=0.02%2C0.03&l=map&pt=47.7853%2C52.0427%2Cpmorm1~47.7873%2C52.0447%2Cpmorm2~47.828075%2C52.022132%2Cpmorm3"
+                  src="https://yandex.ru/map-widget/v1/?ll=47.8084%2C52.0270&spn=0.06%2C0.05&l=map&pt=47.7853%2C52.0427%2Cpmorm1~47.7873%2C52.0447%2Cpmorm2~47.828075%2C52.022132%2Cpmorm3~47.78901%2C52.01127%2Cpmorm4"
                   width="100%"
                   height="100%"
                   style={{ border: 'none' }}
@@ -248,7 +248,7 @@ const Index = () => {
               </div>
 
               {/* Описания объектов */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
                 {[
                   {
                     num: '1',
@@ -269,6 +269,14 @@ const Index = () => {
                   {
                     num: '3',
                     color: '#F5C518',
+                    name: 'Дворец культуры',
+                    address: 'ул. Набережная Леонова, 1А, Балаково',
+                    desc: 'Главный культурный центр города. Здесь проходят концерты, спектакли, городские праздники и выставки. Дворец объединяет творческие коллективы Балаково — от народных ансамблей до молодёжных театральных студий.',
+                    icon: 'Theater',
+                  },
+                  {
+                    num: '4',
+                    color: '#a855f7',
                     name: 'Церковь Рождества Христова',
                     address: 'ул. Трнавская, 22, Балаково',
                     desc: 'Православный храм на юге Балаково. Действующая приходская церковь, ведущая свою историю с советского периода. Место духовной жизни жителей Трнавского микрорайона.',
