@@ -238,7 +238,7 @@ const Index = () => {
               </div>
               <div className="rounded-2xl overflow-hidden" style={{ height: 460, border: '1px solid rgba(255,255,255,0.1)' }}>
                 <iframe
-                  src="https://yandex.ru/map-widget/v1/?ll=47.7863%2C52.0437&spn=0.014%2C0.008&l=map&pt=47.7853%2C52.0427%2Cpmorm1~47.7873%2C52.0447%2Cpmorm2~47.7840%2C52.0455%2Cpmorm3"
+                  src="https://yandex.ru/map-widget/v1/?ll=47.7863%2C52.0437&spn=0.014%2C0.008&l=map&pt=47.7853%2C52.0427%2Cpmorm1~47.7873%2C52.0447%2Cpmorm2"
                   width="100%"
                   height="100%"
                   style={{ border: 'none' }}
@@ -248,7 +248,7 @@ const Index = () => {
               </div>
 
               {/* Описания объектов */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
                 {[
                   {
                     num: '1',
@@ -265,14 +265,6 @@ const Index = () => {
                     address: 'ул. Набережная, 1б, Балаково',
                     desc: 'Шедевр архитектора Фёдора Шехтеля, построенный в 1909–1913 годах. Редчайший образец стиля модерн в православном храмостроении России. Белоснежный силуэт с асимметричной колокольней занесён в реестр объектов культурного наследия федерального значения.',
                     icon: 'Church',
-                  },
-                  {
-                    num: '3',
-                    color: '#F5C518',
-                    name: 'Дворец культуры',
-                    address: 'ул. Набережная Леонова, 1А, Балаково',
-                    desc: 'Главный культурный центр города. Здесь проходят концерты, спектакли, городские праздники и выставки. Дворец объединяет творческие коллективы Балаково — от народных ансамблей до молодёжных театральных студий.',
-                    icon: 'Theater',
                   },
                 ].map((obj) => (
                   <div key={obj.num} className="rounded-xl p-5 flex gap-4" style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.08)' }}>
