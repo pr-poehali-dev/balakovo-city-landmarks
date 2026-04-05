@@ -261,7 +261,7 @@ const Index = () => {
               </div>
               <div className="rounded-2xl overflow-hidden" style={{ height: 460, border: '1px solid rgba(255,255,255,0.1)' }}>
                 <iframe
-                  src="https://yandex.ru/map-widget/v1/?ll=47.7855%2C52.0413&spn=0.022%2C0.014&l=map&pt=47.7853%2C52.0427%2Cpmorm1~47.7873%2C52.0447%2Cpmorm2~47.7836%2C52.0392%2Cpmorm3"
+                  src="https://yandex.ru/map-widget/v1/?ll=47.7863%2C52.0437&spn=0.014%2C0.008&l=map&pt=47.7853%2C52.0427%2Cpmorm1~47.7873%2C52.0447%2Cpmorm2"
                   width="100%"
                   height="100%"
                   style={{ border: 'none' }}
@@ -271,7 +271,7 @@ const Index = () => {
               </div>
 
               {/* Описания объектов */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
                 {[
                   {
                     num: '1',
@@ -289,14 +289,7 @@ const Index = () => {
                     desc: 'Шедевр архитектора Фёдора Шехтеля, построенный в 1909–1913 годах. Редчайший образец стиля модерн в православном храмостроении России. Белоснежный силуэт с асимметричной колокольней занесён в реестр объектов культурного наследия федерального значения.',
                     icon: 'Church',
                   },
-                  {
-                    num: '3',
-                    color: '#22c55e',
-                    name: 'Центральный парк',
-                    address: 'ул. Трнавская, 2, Балаково',
-                    desc: 'Главный парк отдыха Балаково, расположенный вблизи Рождественской церкви. Зелёные аллеи, фонтаны и детские площадки делают его любимым местом горожан. Особенно красив в летние вечера — здесь проходят городские праздники и гуляния.',
-                    icon: 'Trees',
-                  },
+
                 ].map((obj) => (
                   <div key={obj.num} className="rounded-xl p-5 flex gap-4" style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.08)' }}>
                     <div className="shrink-0 w-9 h-9 rounded-full flex items-center justify-center font-bold text-white text-sm" style={{ background: obj.color, fontFamily: 'Oswald, sans-serif' }}>
