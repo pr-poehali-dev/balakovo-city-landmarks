@@ -234,11 +234,11 @@ const Index = () => {
               <div className="mb-8">
                 <div className="section-divider w-16 mb-6" />
                 <h2 className="font-bold text-4xl text-white" style={{ fontFamily: 'Oswald, sans-serif' }}>ИНТЕРАКТИВНАЯ КАРТА</h2>
-                <p className="text-gray-400 mt-2">Три исторических объекта в самом сердце Балаково</p>
+                <p className="text-gray-400 mt-2">Исторические объекты в самом сердце Балаково</p>
               </div>
               <div className="rounded-2xl overflow-hidden" style={{ height: 460, border: '1px solid rgba(255,255,255,0.1)' }}>
                 <iframe
-                  src="https://yandex.ru/map-widget/v1/?ll=47.7863%2C52.0437&spn=0.014%2C0.008&l=map&pt=47.7853%2C52.0427%2Cpmorm1~47.7873%2C52.0447%2Cpmorm2"
+                  src="https://yandex.ru/map-widget/v1/?ll=47.7863%2C52.0437&spn=0.014%2C0.008&l=map&pt=47.7853%2C52.0427%2Cpmorm1~47.7873%2C52.0447%2Cpmorm2~47.7840%2C52.0455%2Cpmorm3"
                   width="100%"
                   height="100%"
                   style={{ border: 'none' }}
@@ -248,7 +248,7 @@ const Index = () => {
               </div>
 
               {/* Описания объектов */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
                 {[
                   {
                     num: '1',
@@ -266,7 +266,14 @@ const Index = () => {
                     desc: 'Шедевр архитектора Фёдора Шехтеля, построенный в 1909–1913 годах. Редчайший образец стиля модерн в православном храмостроении России. Белоснежный силуэт с асимметричной колокольней занесён в реестр объектов культурного наследия федерального значения.',
                     icon: 'Church',
                   },
-
+                  {
+                    num: '3',
+                    color: '#F5C518',
+                    name: 'Дворец культуры',
+                    address: 'ул. Набережная Леонова, 1А, Балаково',
+                    desc: 'Главный культурный центр города. Здесь проходят концерты, спектакли, городские праздники и выставки. Дворец объединяет творческие коллективы Балаково — от народных ансамблей до молодёжных театральных студий.',
+                    icon: 'Theater',
+                  },
                 ].map((obj) => (
                   <div key={obj.num} className="rounded-xl p-5 flex gap-4" style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.08)' }}>
                     <div className="shrink-0 w-9 h-9 rounded-full flex items-center justify-center font-bold text-white text-sm" style={{ background: obj.color, fontFamily: 'Oswald, sans-serif' }}>
