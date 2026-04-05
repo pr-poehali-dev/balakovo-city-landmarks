@@ -401,7 +401,6 @@ const Index = () => {
           <div className="flex gap-6 text-sm text-gray-400">
             {[
               { id: 'home' as Section, label: 'Главная' },
-              { id: 'gallery' as Section, label: 'Галерея' },
               { id: 'history' as Section, label: 'История' },
             ].map(({ id, label }) => (
               <button key={id} onClick={() => scrollTo(id)} className="hover:text-white transition-colors">
