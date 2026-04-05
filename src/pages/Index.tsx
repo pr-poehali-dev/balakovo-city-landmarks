@@ -18,6 +18,16 @@ const GALLERY_IMGS = [
     title: 'Городская жизнь',
     desc: 'Современный центр и набережная',
   },
+  {
+    url: 'https://cdn.poehali.dev/projects/cd43ea5d-c78d-4a20-8356-eccb8bb2ccc2/files/60c4e0e4-db64-4bfc-9e93-bac19d9e8729.jpg',
+    title: 'Закат над Волгой',
+    desc: 'Золотой час — город в лучах закатного солнца',
+  },
+  {
+    url: 'https://cdn.poehali.dev/projects/cd43ea5d-c78d-4a20-8356-eccb8bb2ccc2/files/513e6a0b-ed56-4d7b-876d-56d9b87a0b47.jpg',
+    title: 'Город с высоты',
+    desc: 'Балаково — порт, парки и жилые кварталы',
+  },
 ];
 
 const ATTRACTIONS = [
