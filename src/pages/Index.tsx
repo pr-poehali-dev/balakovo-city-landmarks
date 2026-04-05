@@ -257,17 +257,61 @@ const Index = () => {
               <div className="mb-8">
                 <div className="section-divider w-16 mb-6" />
                 <h2 className="font-bold text-4xl text-white" style={{ fontFamily: 'Oswald, sans-serif' }}>ИНТЕРАКТИВНАЯ КАРТА</h2>
-                <p className="text-gray-400 mt-2">Все достопримечательности Балаково на одной карте</p>
+                <p className="text-gray-400 mt-2">Три исторических объекта в самом сердце Балаково</p>
               </div>
               <div className="rounded-2xl overflow-hidden" style={{ height: 460, border: '1px solid rgba(255,255,255,0.1)' }}>
                 <iframe
-                  src="https://yandex.ru/map-widget/v1/?ll=47.797%2C52.036&spn=0.12%2C0.07&l=map&pt=47.797%2C52.036%2Cpmrdm1~47.793%2C52.031%2Cpmrdm2~47.800%2C52.040%2Cpmrdm3"
+                  src="https://yandex.ru/map-widget/v1/?ll=47.7955%2C52.0355&spn=0.025%2C0.015&l=map&pt=47.7942%2C52.0348%2Cpmorm1~47.7968%2C52.0361%2Cpmorm2~47.7951%2C52.0342%2Cpmorm3"
                   width="100%"
                   height="100%"
                   style={{ border: 'none' }}
                   title="Карта Балаково"
                   allowFullScreen
                 />
+              </div>
+
+              {/* Описания объектов */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
+                {[
+                  {
+                    num: '1',
+                    color: '#F2520A',
+                    name: 'Усадьба Мальцева',
+                    address: 'ул. Чапаева, 67',
+                    desc: 'Купеческая усадьба XIX века — один из красивейших образцов эклектики в Поволжье. Принадлежала роду богатых торговцев хлебом.',
+                    icon: 'Home',
+                  },
+                  {
+                    num: '2',
+                    color: '#0E95B4',
+                    name: 'Историческая пожарная часть',
+                    address: 'ул. Коммунистическая, 15',
+                    desc: 'Пожарное депо начала XX века с сохранившейся каланчой. Памятник архитектуры регионального значения, символ дореволюционного Балаково.',
+                    icon: 'Flame',
+                  },
+                  {
+                    num: '3',
+                    color: '#F5C518',
+                    name: 'Церковь Троицы Живоначальной',
+                    address: 'ул. Коммунистическая, 1',
+                    desc: 'Шедевр архитектора Фёдора Шехтеля (1909–1913). Редкий образец модерна в православном храмостроении, охраняется государством.',
+                    icon: 'Church',
+                  },
+                ].map((obj) => (
+                  <div key={obj.num} className="rounded-xl p-5 flex gap-4" style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.08)' }}>
+                    <div className="shrink-0 w-9 h-9 rounded-full flex items-center justify-center font-bold text-white text-sm" style={{ background: obj.color, fontFamily: 'Oswald, sans-serif' }}>
+                      {obj.num}
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-white mb-0.5" style={{ fontFamily: 'Oswald, sans-serif', fontSize: '1rem' }}>{obj.name}</h4>
+                      <p className="text-xs mb-2 flex items-center gap-1" style={{ color: obj.color }}>
+                        <Icon name="MapPin" size={11} />
+                        {obj.address}
+                      </p>
+                      <p className="text-gray-400 text-sm leading-relaxed">{obj.desc}</p>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
           </section>
