@@ -261,7 +261,7 @@ const Index = () => {
               </div>
               <div className="rounded-2xl overflow-hidden" style={{ height: 460, border: '1px solid rgba(255,255,255,0.1)' }}>
                 <iframe
-                  src="https://yandex.ru/map-widget/v1/?ll=47.7855%2C52.0413&spn=0.022%2C0.014&l=map&pt=47.7853%2C52.0427%2Cpmorm1~47.7873%2C52.0447%2Cpmorm2~47.7836%2C52.0392%2Cpmorm3"
+                  src="https://yandex.ru/map-widget/v1/?ll=47.7875%2C52.0400&spn=0.026%2C0.016&l=map&pt=47.7853%2C52.0427%2Cpmorm1~47.7873%2C52.0447%2Cpmorm2~47.7920%2C52.0330%2Cpmorm3"
                   width="100%"
                   height="100%"
                   style={{ border: 'none' }}
