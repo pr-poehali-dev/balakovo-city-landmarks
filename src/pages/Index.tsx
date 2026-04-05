@@ -238,7 +238,7 @@ const Index = () => {
               </div>
               <div className="rounded-2xl overflow-hidden" style={{ height: 460, border: '1px solid rgba(255,255,255,0.1)' }}>
                 <iframe
-                  src="https://yandex.ru/map-widget/v1/?ll=47.8084%2C52.0270&spn=0.08%2C0.06&l=map&pt=47.7853%2C52.0427%2Cpmorm1~47.7873%2C52.0447%2Cpmorm2~47.828075%2C52.022132%2Cpmorm3~47.78901%2C52.01127%2Cpmorm4~47.78917%2C52.00278%2Cpmorm5"
+                  src="https://yandex.ru/map-widget/v1/?ll=47.8000%2C52.0200&spn=0.12%2C0.08&l=map&pt=47.7853%2C52.0427%2Cpmorm1~47.7873%2C52.0447%2Cpmorm2~47.828075%2C52.022132%2Cpmorm3~47.78901%2C52.01127%2Cpmorm4~47.78917%2C52.00278%2Cpmorm5~47.77075%2C52.03433%2Cpmorm6"
                   width="100%"
                   height="100%"
                   style={{ border: 'none' }}
@@ -289,6 +289,14 @@ const Index = () => {
                     address: 'ул. Вокзальная, 4, Балаково',
                     desc: 'Железнодорожный вокзал Балаково — главные ворота города для пассажирских поездов. Обеспечивает транспортное сообщение с крупными городами России.',
                     icon: 'Train',
+                  },
+                  {
+                    num: '6',
+                    color: '#ef4444',
+                    name: 'Музей Чапаева',
+                    address: 'ул. Чапаева, 110, Балаково',
+                    desc: 'Музей посвящён легендарному комдиву Василию Ивановичу Чапаеву, родившемуся в этих краях. Экспозиция рассказывает о его жизни, боевом пути и эпохе Гражданской войны.',
+                    icon: 'Landmark',
                   },
                 ].map((obj) => (
                   <div key={obj.num} className="rounded-xl p-5 flex gap-4" style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.08)' }}>
