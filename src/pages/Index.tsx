@@ -2,33 +2,6 @@ import { useState } from 'react';
 import Icon from '@/components/ui/icon';
 
 const HERO_IMG = 'https://cdn.poehali.dev/projects/cd43ea5d-c78d-4a20-8356-eccb8bb2ccc2/files/e6449323-c915-4fe7-97d6-8a3400a26851.jpg';
-const GALLERY_IMGS = [
-  {
-    url: 'https://cdn.poehali.dev/projects/cd43ea5d-c78d-4a20-8356-eccb8bb2ccc2/files/e6449323-c915-4fe7-97d6-8a3400a26851.jpg',
-    title: 'Панорама Балаково',
-    desc: 'Вид с воздуха на город и Волгу',
-  },
-  {
-    url: 'https://cdn.poehali.dev/projects/cd43ea5d-c78d-4a20-8356-eccb8bb2ccc2/files/d2a27e58-8bf8-4d19-81fe-ab8374d1ac5a.jpg',
-    title: 'Промышленная мощь',
-    desc: 'Балаковская АЭС и ГЭС — гордость города',
-  },
-  {
-    url: 'https://cdn.poehali.dev/projects/cd43ea5d-c78d-4a20-8356-eccb8bb2ccc2/files/533fcf90-1686-4b79-8258-eb1ad30c3978.jpg',
-    title: 'Городская жизнь',
-    desc: 'Современный центр и набережная',
-  },
-  {
-    url: 'https://cdn.poehali.dev/projects/cd43ea5d-c78d-4a20-8356-eccb8bb2ccc2/files/60c4e0e4-db64-4bfc-9e93-bac19d9e8729.jpg',
-    title: 'Закат над Волгой',
-    desc: 'Золотой час — город в лучах закатного солнца',
-  },
-  {
-    url: 'https://cdn.poehali.dev/projects/cd43ea5d-c78d-4a20-8356-eccb8bb2ccc2/files/513e6a0b-ed56-4d7b-876d-56d9b87a0b47.jpg',
-    title: 'Город с высоты',
-    desc: 'Балаково — порт, парки и жилые кварталы',
-  },
-];
 
 const ATTRACTIONS = [
   {
@@ -120,11 +93,10 @@ const HISTORY_FACTS = [
   },
 ];
 
-type Section = 'home' | 'gallery' | 'history';
+type Section = 'home' | 'history';
 
 const Index = () => {
   const [activeSection, setActiveSection] = useState<Section>('home');
-  const [selectedPhoto, setSelectedPhoto] = useState<null | typeof GALLERY_IMGS[0]>(null);
   const [activeAttraction, setActiveAttraction] = useState<null | typeof ATTRACTIONS[0]>(null);
 
   const scrollTo = (id: Section) => {
@@ -145,7 +117,6 @@ const Index = () => {
           <div className="flex items-center gap-6">
             {[
               { id: 'home' as Section, label: 'Главная', icon: 'Home' },
-              { id: 'gallery' as Section, label: 'Галерея', icon: 'Images' },
               { id: 'history' as Section, label: 'История', icon: 'BookOpen' },
             ].map(({ id, label, icon }) => (
               <button
@@ -181,10 +152,6 @@ const Index = () => {
                   Город энергии, истории и Волжских просторов. Откройте для себя жемчужину Саратовской области.
                 </p>
                 <div className="flex flex-wrap gap-3">
-                  <button onClick={() => scrollTo('gallery')} className="flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-white transition-all hover:scale-105" style={{ background: 'var(--clr-orange)' }}>
-                    <Icon name="Images" size={16} />
-                    Галерея
-                  </button>
                   <button onClick={() => scrollTo('history')} className="flex items-center gap-2 px-6 py-3 rounded-xl font-semibold transition-all hover:scale-105" style={{ background: 'rgba(255,255,255,0.1)', color: 'white', border: '1px solid rgba(255,255,255,0.3)', backdropFilter: 'blur(10px)' }}>
                     <Icon name="BookOpen" size={16} />
                     История
@@ -346,53 +313,6 @@ const Index = () => {
         </div>
       )}
 
-      {/* ─── GALLERY ─── */}
-      {activeSection === 'gallery' && (
-        <div className="animate-fade-in">
-          <section className="py-16 max-w-6xl mx-auto px-4">
-            <div className="mb-12">
-              <div className="section-divider w-16 mb-6" />
-              <h2 className="font-bold text-5xl" style={{ color: 'var(--clr-dark)', fontFamily: 'Oswald, sans-serif' }}>ГАЛЕРЕЯ</h2>
-              <p className="text-gray-500 mt-2 text-lg">Балаково в объективе</p>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {GALLERY_IMGS.map((img, i) => (
-                <button
-                  key={i}
-                  onClick={() => setSelectedPhoto(img)}
-                  className="group relative rounded-2xl overflow-hidden card-hover text-left"
-                  style={{ aspectRatio: '4/3' }}
-                >
-                  <img src={img.url} alt={img.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
-                  <div className="absolute inset-0 transition-opacity duration-300 opacity-0 group-hover:opacity-100" style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 60%)' }} />
-                  <div className="absolute bottom-0 left-0 right-0 p-5 text-white translate-y-2 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
-                    <h3 className="font-semibold text-lg" style={{ fontFamily: 'Oswald, sans-serif' }}>{img.title}</h3>
-                    <p className="text-gray-300 text-sm">{img.desc}</p>
-                  </div>
-                  <div className="absolute top-4 right-4 w-8 h-8 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                    <Icon name="ZoomIn" size={14} className="text-white" />
-                  </div>
-                </button>
-              ))}
-            </div>
-          </section>
-
-          {selectedPhoto && (
-            <div className="fixed inset-0 z-50 flex items-center justify-center p-4 animate-fade-in" style={{ background: 'rgba(0,0,0,0.85)', backdropFilter: 'blur(8px)' }} onClick={() => setSelectedPhoto(null)}>
-              <div className="relative max-w-4xl w-full rounded-2xl overflow-hidden" onClick={e => e.stopPropagation()}>
-                <img src={selectedPhoto.url} alt={selectedPhoto.title} className="w-full object-cover rounded-2xl" />
-                <div className="absolute bottom-0 left-0 right-0 p-6" style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 100%)' }}>
-                  <h3 className="font-bold text-2xl text-white" style={{ fontFamily: 'Oswald, sans-serif' }}>{selectedPhoto.title}</h3>
-                  <p className="text-gray-300">{selectedPhoto.desc}</p>
-                </div>
-                <button onClick={() => setSelectedPhoto(null)} className="absolute top-4 right-4 w-10 h-10 rounded-full flex items-center justify-center text-white" style={{ background: 'rgba(0,0,0,0.5)' }}>
-                  <Icon name="X" size={18} />
-                </button>
-              </div>
-            </div>
-          )}
-        </div>
-      )}
 
       {/* ─── HISTORY ─── */}
       {activeSection === 'history' && (
